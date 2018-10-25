@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>@ViewData["Title"] - DotNetCoreUIAdmin</title>
+
+    <environment include="Development">
+        <link href="~/theme/coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+        <link href="~/theme/flag-icon-css/css/flag-icon.css" rel="stylesheet">
+
+        <link href="~/theme/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="~/theme/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+        <!-- Main styles for this application-->
+        <link href="~/theme/css/style.css" rel="stylesheet">
+        <link href="~/theme/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    </environment>
+    <environment exclude="Development">
+        <link href="~/theme/coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+        <link href="~/theme/flag-icon-css/css/flag-icon.css" rel="stylesheet">
+
+        <link href="~/theme/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="~/theme/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+        <!-- Main styles for this application-->
+        <link href="~/theme/css/style.css" rel="stylesheet">
+        <link href="~/theme/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    </environment>
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+
+
+    <partial name="_CookieConsentPartial" />
+    <partial name="_AppHeader" />
+
+    <div class="app-body">
+
+        <partial name="_SideMenuPartial" />
+
+        <main class="main">
+            <!-- Breadcrumb-->
+            <ol class="breadcrumb">
+                @*<li class="breadcrumb-item">Home</li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Admin</a>
+                    </li>
+                    <li class="breadcrumb-item active">Dashboard</li>*@
+                <!-- Breadcrumb Menu-->
+                <li class="breadcrumb-menu d-md-down-none">
+                    <div class="btn-group" role="group" aria-label="Button group">
+                        <a class="btn" href="#">
+                            <i class="icon-speech"></i>
+                        </a>
+                        <a class="btn" href="./">
+                            <i class="icon-graph"></i>  Dashboard
+                        </a>
+                        <a class="btn" href="#">
+                            <i class="icon-settings"></i>  Settings
+                        </a>
+                    </div>
+                </li>
+            </ol>
+            <div class="container-fluid">
+                @RenderBody();
+            </div>
+        </main>
+
+    </div>
+
+
+    <environment include="Development">
+        <!-- CoreUI and necessary plugins-->
+        <script src="~/theme/jquery/dist/jquery.min.js"></script>
+        <script src="~/theme/popper.js/dist/umd/popper.min.js"></script>
+        <script src="~/theme/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/theme/pace-progress/pace.min.js"></script>
+        <script src="~/theme/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        <script src="~/theme/coreui/coreui/dist/js/coreui.js"></script>
+        <!-- Plugins and scripts required by this view-->
+
+
+        <script src="~/theme/chart.js/dist/Chart.js"></script>
+        <script src="~/theme/coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+        <script src="~/theme/js/main.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <!-- CoreUI and necessary plugins-->
+        <script src="~/theme/jquery/dist/jquery.min.js"></script>
+        <script src="~/theme/popper.js/dist/umd/popper.min.js"></script>
+        <script src="~/theme/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/theme/pace-progress/pace.min.js"></script>
+        <script src="~/theme/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        <script src="~/theme/coreui/coreui/dist/js/coreui.js"></script>
+        <!-- Plugins and scripts required by this view-->
+        <script src="~/theme/chart.js/dist/Chart.js"></script>
+        <script src="~/theme/coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+        <script src="~/theme/js/main.js"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,141 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>@ViewData["Title"] - DotNetCoreUIAdmin</title>
+
+    <environment include="Development">
+        <link href="~/theme/coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+        <link href="~/theme/flag-icon-css/css/flag-icon.css" rel="stylesheet">
+
+        <link href="~/theme/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="~/theme/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+        <!-- Main styles for this application-->
+        <link href="~/theme/css/style.css" rel="stylesheet">
+        <link href="~/theme/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    </environment>
+    <environment exclude="Development">
+        <link href="~/theme/coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+        <link href="~/theme/flag-icon-css/css/flag-icon.css" rel="stylesheet">
+
+        <link href="~/theme/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="~/theme/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+        <!-- Main styles for this application-->
+        <link href="~/theme/css/style.css" rel="stylesheet">
+        <link href="~/theme/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    </environment>
+</head>
+<body class="app flex-row align-items-center">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mx-4">
+                    <div class="card-body p-4">
+                        <h1>Register</h1>
+                        <p class="text-muted">Create your account</p>
+                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-user"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="Input.Email" placeholder="Email" class="form-control" />
+                                
+                            </div>
+                            @*<div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input class="form-control" type="text" placeholder="Email">
+                            </div>*@
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-lock"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="Input.Password" placeholder="Password" class="form-control" />
+                                
+                            </div>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-lock"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="Input.ConfirmPassword" placeholder="Repeat password" class="form-control" />
+                                
+                            </div>
+                            <button class="btn btn-block btn-success" type="submit">Create Account</button>
+                            </form>
+                    </div>
+                    <div class="card-footer p-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-block btn-facebook" type="button">
+                                    <span>facebook</span>
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-block btn-twitter" type="button">
+                                    <span>twitter</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <environment include="Development">
+        <!-- CoreUI and necessary plugins-->
+        <script src="~/theme/jquery/dist/jquery.min.js"></script>
+        <script src="~/theme/popper.js/dist/umd/popper.min.js"></script>
+        <script src="~/theme/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/theme/pace-progress/pace.min.js"></script>
+        <script src="~/theme/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        <script src="~/theme/coreui/coreui/dist/js/coreui.js"></script>
+        <!-- Plugins and scripts required by this view-->
+
+
+        <script src="~/theme/chart.js/dist/Chart.js"></script>
+        <script src="~/theme/coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+        <script src="~/theme/js/main.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <!-- CoreUI and necessary plugins-->
+        <script src="~/theme/jquery/dist/jquery.min.js"></script>
+        <script src="~/theme/popper.js/dist/umd/popper.min.js"></script>
+        <script src="~/theme/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/theme/pace-progress/pace.min.js"></script>
+        <script src="~/theme/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        <script src="~/theme/coreui/coreui/dist/js/coreui.js"></script>
+        <!-- Plugins and scripts required by this view-->
+        <script src="~/theme/chart.js/dist/Chart.js"></script>
+        <script src="~/theme/coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+        <script src="~/theme/js/main.js"></script>
+    </environment>
+</body>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
